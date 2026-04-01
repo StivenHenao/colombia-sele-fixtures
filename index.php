@@ -1,5 +1,5 @@
 <?php
-if (preg_match('/\.(?:png|jpg|jpeg|gif|css|js)$/', $_SERVER["REQUEST_URI"])) {
+if (preg_match('/\.(?:png|jpg|jpeg|gif|css|js)$/', $_SERVER["REQUEST_URI"] ?? $_SERVER["PATH_INFO"] ?? "")) {
     return false;
 }
 require_once 'logic.php'; 
