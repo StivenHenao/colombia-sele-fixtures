@@ -58,7 +58,12 @@ require_once 'logic.php';
             </div>
 
             <div class="fixture-body">
-                <div class="fixture-name"><?= htmlspecialchars($p["partido"]) ?></div>
+                <div class="fixture-header">
+                    <div class="fixture-name"><?= htmlspecialchars($p["partido"]) ?></div>
+                    <span class="fixture-badge <?= $isNext ? 'badge-next' : 'badge-sched' ?>">
+                        <?= $isNext ? 'Próximo' : 'Programado' ?>
+                    </span>
+                </div>
                 <div class="fixture-meta">
                     <?php if ($p["competicion"]): ?>
                         <span class="meta-comp"><?= htmlspecialchars($p["competicion"]) ?></span>
@@ -71,10 +76,6 @@ require_once 'logic.php';
                     <?php endif; ?>
                 </div>
             </div>
-
-            <span class="fixture-badge <?= $isNext ? 'badge-next' : 'badge-sched' ?>">
-                <?= $isNext ? 'Próximo' : 'Programado' ?>
-            </span>
         </div>
         <?php endforeach; ?>
     </div>

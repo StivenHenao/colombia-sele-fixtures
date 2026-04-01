@@ -149,7 +149,7 @@ body {
 }
 
 .fixture-date {
-  min-width: 52px;
+  min-width: 48px;
   text-align: center;
   background: #242424;
   border-radius: 7px;
@@ -166,60 +166,69 @@ body {
 
 .fixture-mon {
   font-size: 10px;
-  letter-spacing: .08em;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: #555;
 }
 
-.fixture-name {
-  flex: 1;
-  font-size: 14px;
-  font-weight: 500;
-  color: #e8e8e2;
-}
-
-.fixture-badge {
-  font-size: 11px;
-  border-radius: 100px;
-  padding: .2rem .65rem;
-  white-space: nowrap;
-}
-
 .fixture-body {
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: .25rem;
+}
+
+.fixture-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.fixture-name {
+  font-size: clamp(12px, 3.5vw, 14px);
+  font-weight: 500;
+  color: #e8e8e2;
+  word-break: break-word;
+}
+
+.fixture-badge {
+  font-size: 10px;
+  border-radius: 100px;
+  padding: .2rem .6rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .fixture-meta {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: .35rem;
+  gap: .3rem;
 }
 
 .meta-comp {
-  font-size: 11px;
+  font-size: 10px;
   color: #4caf50;
   background: rgba(76, 175, 80, .1);
   border-radius: 100px;
-  padding: .15rem .55rem;
+  padding: .15rem .5rem;
   white-space: nowrap;
 }
 
 .meta-hora {
-  font-size: 11px;
+  font-size: 10px;
   color: #888;
   white-space: nowrap;
 }
 
 .meta-tv {
-  font-size: 11px;
+  font-size: 10px;
   color: #fdd835;
   background: rgba(253, 216, 53, .08);
   border-radius: 100px;
-  padding: .15rem .55rem;
+  padding: .15rem .5rem;
   white-space: nowrap;
 }
 
@@ -231,4 +240,23 @@ body {
 .badge-sched {
   background: rgba(76, 175, 80, .1);
   color: #4caf50;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+  .hero {
+    padding: 1.5rem 1rem 1.5rem;
+  }
+  .fixture-item {
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+  .fixture-date {
+    min-width: 40px;
+  }
+  .fixture-day {
+    font-size: 1.1rem;
+  }
 }
