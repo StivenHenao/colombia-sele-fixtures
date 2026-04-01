@@ -1,0 +1,2 @@
+[deploy]
+startCommand = "caddy run --config /Caddyfile"
