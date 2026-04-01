@@ -1,8 +1,11 @@
 <?php
 date_default_timezone_set('America/Bogota');
 
-$config = parse_ini_file('.env');
-$url = $config['URL_API'];
+$url = getenv('URL_API');
+
+if (!$url) {
+    die("Error: URL_API no está definida en Railway");
+};
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
